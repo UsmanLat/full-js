@@ -1,7 +1,9 @@
 'use strict'
-//let result = confirm('Are you here')
-
-let incr = 10,
-  decr = 10
-console.log(incr++)
-console.log(decr--)
+let numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', 1)
+const personalMovieDB = {
+  count: numberOfFilms,
+  movies: {},
+  actors: {},
+  genres: [],
+  privat: false,
+}
