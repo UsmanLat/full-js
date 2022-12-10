@@ -51,24 +51,65 @@
 // }
 // console.log(getTimeFromMinutes(50.2));
 
-function fib(n) {
-  let result = '';
-  if (!Number.isInteger(n) || n < 2) {
-    return '';
-  } else {
-    let a = 0,
-      b = 1,
-      c = a + b;
-    result = '' + a + ' ' + b;
-    for (let i = 3; i <= n; i++) {
-      a = b;
-      b = c;
-      c = a + b;
-      result = `${result} ${b}`;
-    }
-  }
-  //console.log(result);
-  return result;
-}
+// function fib(n) {
+//   let result = '';
+//   if (!Number.isInteger(n) || n < 2) {
+//     return '';
+//   } else {
+//     let a = 0,
+//       b = 1,
+//       c = a + b;
+//     result = '' + a + ' ' + b;
+//     for (let i = 3; i <= n; i++) {
+//       a = b;
+//       b = c;
+//       c = a + b;
+//       result = `${result} ${b}`;
+//     }
+//   }
+//   //console.log(result);
+//   return result;
+// }
 
- 
+// const obj = new Object(arguments);
+
+// const personalPlanPeter = {
+//   name: 'Peter',
+//   age: '29',
+//   skills: {
+//     languages: ['ru', 'eng'],
+//     programmingLangs: {
+//       js: '20%',
+//       php: '10%',
+//     },
+//     exp: '1 month',
+//   },
+//   showAgeAndLangs(plan) {
+//     const { languages } = plan.skills;
+//     const { age } = plan;
+//     const langs = languages.map((lang) => lang.toUpperCase());
+//     return `Мне ${age} и я владею языками: ${langs.join(' ')}`;
+//   },
+//   //'Мне 29 и я владею языками: RU ENG'
+// };
+// console.log(personalPlanPeter.showAgeAndLangs(personalPlanPeter));
+// // function showExperience(plan) {
+// //   const { exp } = plan['skills'];
+// //   return exp;
+// // }
+// // console.log( showExperience(personalPlanPeter));
+
+// // function showProgrammingLangs(plan) {
+// //   let result = '';
+// //   const { programmingLangs } = plan.skills;
+
+// //   let i = 0;
+// //   for (const key in programmingLangs) {
+// //     const space = i ? ' ' : '';
+
+// //     result = `${result}${space}Язык ${key} изучен на ${programmingLangs[key]}\n`;
+// //   }
+// //   return result;
+// // }
+
+// // console.log(showProgrammingLangs(personalPlanPeter));
