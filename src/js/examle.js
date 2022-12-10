@@ -1,36 +1,36 @@
 'use strict';
-// const someString = 'This is some strange string';
+const shoppingMallData = {
+  shops: [
+    {
+      width: 10,
+      length: 5,
+    },
+    {
+      width: 15,
+      length: 7,
+    },
+    {
+      width: 20,
+      length: 5,
+    },
+    {
+      width: 8,
+      length: 10,
+    },
+  ],
+  height: 5,
+  moneyPer1m3: 30,
+  budget: 50000,
+};
 
-// function reverse(str) {
-//   if (typeof str !== 'string') {
-//     return 'Ошибка!';
-//   }
-//   return str.split('').reverse().join('');
-// }
-// console.log(reverse(someString));
-// console.log(reverse([]));
+function isBudgetEnough(data) {
+  let totalSquare = 0;
+  data.shops.forEach((shop) => (totalSquare += shop.width * shop.length));
+  let totalSumm = totalSquare * data.height * data.moneyPer1m3;
+  console.log(totalSquare, totalSumm);
 
-const baseCurrencies = ['USD', 'EUR'];
-const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
-
-function availableCurr(arr, missingCurr) {
-  // if (!arr.length) {
-  //   return 'Нет доступных валют';
-  // }
-  // let str = 'Доступные валюты:\n';
-
-  // arr
-  //   .filter((item) => item !== missingCurr)
-  //   .forEach((element) => {
-  //     str = `${str} ${element}\n`;
-  //   });
-  // return str;
-
-  let str = arr.length ? 'Доступные валюты:\n' : 'Нет доступных валют';
-  arr.forEach(
-    (element) => (str += element === missingCurr ? '' : `${element}\n`)
-  );
-  return str;
+  return data.budget >= totalSumm
+    ? 'Бюджета достаточно'
+    : 'Бюджета недостаточно';
 }
-console.log(availableCurr([...baseCurrencies, ...additionalCurrencies], 'EUR'));
-console.log(availableCurr([], 'EUR'));
+console.log(isBudgetEnough(shoppingMallData));
