@@ -51,13 +51,29 @@ const personalMovieDB = {
     }
   },
   showMyDB() {
-    if (!this.hidden) {
+    console.log(this.privat);
+    if (!this.privat) {
       console.log(this);
     }
   },
   writeYourGenres() {
     for (let i = 1; i <= 3; i++) {
       this.genres[i - 1] = prompt(`Ваш любимый жанр под номером ${i}`);
+      if (this.genres[i - 1] === '' || this.genres[i - 1] === null) {
+        console.log(this.genres[i - 1]);
+        i--;
+      }
     }
+    const { genres } = this;
+    //let i = 1;
+    genres.forEach((element, i) => {
+      console.log(`Любимый жанр #${i + 1} - это ${genres[i]}`);
+      i++;
+    });
+  },
+  toggleVisibleMyDB() {
+    this.privat = !this.privat;
+    //console.log(this.privat);
+    this.showMyDB();
   },
 };
